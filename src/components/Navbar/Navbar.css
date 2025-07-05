@@ -1,0 +1,97 @@
+.navbar {
+  width: 100%;
+  height: 10vh;
+  padding: 0 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.navbar-menu {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  transition: max-height 0.3s ease-in-out;
+}
+
+.navbar-menu li {
+  padding: 10px 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  line-height: 1.5;
+}
+
+.logo {
+  width: 50px;
+  max-height: 10vh;
+  margin: 0;
+  border-radius: 50%;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.navbar button {
+  background: transparent;
+  font-size: 16px;
+  border: 2px solid;
+  padding: 10px 30px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: 0.2s;
+  align-items: center;
+}
+
+.navbar button:hover {
+  background-color: rgb(234, 101, 53);
+}
+
+@media (min-width: 801px) {
+  .navbar-menu .active {
+    border-bottom: 2px solid black;
+  }
+}
+
+.menu-icon {
+  display: none;
+  cursor: pointer;
+  margin-left: 7px;
+}
+
+.navbar-search-icon {
+  margin-left: 7px;
+}
+
+@media (max-width: 800px) {
+  .navbar-menu {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    text-align: center;
+    overflow: hidden;
+    background: white;
+    z-index: 100;
+  }
+
+  .navbar-menu .active {
+    border-bottom: none;
+  }
+
+  .navbar-menu li:hover {
+    background-color: #f3f3f3;
+    border-bottom: 2px solid black;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+}

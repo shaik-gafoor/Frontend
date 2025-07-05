@@ -1,0 +1,49 @@
+.header {
+  height: 70vh;
+  margin: 30px auto;
+  background-image: url("../../assets/header_img.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.header-contents {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 1.5vw;
+  max-width: 100%;
+  max-height: 400px;
+  height: max-content;
+  bottom: 10%;
+  left: 6vw;
+  animation: fadeIn 3s;
+  margin: 0 auto;
+}
+.header-contents h2 {
+  font-weight: 400;
+  color: white;
+  font-size: 6rem;
+}
+.header-contents p {
+  color: white;
+  font-size: 1.3rem;
+  width: 100%;
+}
+.header-contents button {
+  border: none;
+  color: aliceblue;
+  font-weight: 500;
+  padding: 1vw 2.3vw;
+  background-color: white;
+  font-size: max(1vw, 13px);
+  border-radius: 50px;
+  color: black;
+}
+
+.button:hover {
+  background-color: rgb(234, 101, 53);
+}
