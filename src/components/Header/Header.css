@@ -1,12 +1,15 @@
 .header {
+  width: 100%;
   height: 70vh;
-  margin: 30px auto;
   background-image: url("../../assets/header_img.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  background-attachment: scroll;
+  background-color: transparent;
   position: relative;
 }
+
 .header-contents {
   position: absolute;
   display: flex;
@@ -19,31 +22,87 @@
   max-height: 400px;
   height: max-content;
   bottom: 10%;
-  left: 6vw;
+  left: 50%;
+  transform: translateX(-50%);
   animation: fadeIn 3s;
   margin: 0 auto;
+  padding: 0 2vw;
 }
+
 .header-contents h2 {
   font-weight: 400;
   color: white;
-  font-size: 6rem;
-}
-.header-contents p {
-  color: white;
-  font-size: 1.3rem;
-  width: 100%;
-}
-.header-contents button {
-  border: none;
-  color: aliceblue;
-  font-weight: 500;
-  padding: 1vw 2.3vw;
-  background-color: white;
-  font-size: max(1vw, 13px);
-  border-radius: 50px;
-  color: black;
+  font-size: clamp(2rem, 6vw, 6rem);
+  line-height: 1.1;
+  text-align: center;
+  margin: 0;
 }
 
-.button:hover {
+.header-contents p {
+  color: white;
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  width: 100%;
+  max-width: 600px;
+  margin: 0;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.header-contents button {
+  border: none;
+  font-weight: 500;
+  padding: 1rem 2.5rem;
+  background-color: white;
+  font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+  border-radius: 50px;
+  color: black;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.header-contents button:hover {
   background-color: rgb(234, 101, 53);
+}
+
+/* 🔧 Mobile Responsive */
+@media (max-width: 768px) {
+  .header {
+    height: 80vh;
+    background-position: center top;
+    max-inline-size: 100%;
+  }
+
+  .header-contents {
+    gap: 3vw;
+    bottom: 8%;
+    padding: 0 5vw;
+  }
+
+  .header-contents h2 {
+    font-size: clamp(1.5rem, 8vw, 3rem);
+  }
+
+  .header-contents p {
+    font-size: clamp(0.9rem, 4vw, 1.1rem);
+  }
+
+  .header-contents button {
+    padding: 0.8rem 2rem;
+    font-size: clamp(0.8rem, 3vw, 1rem);
+  }
+}
+
+@media (max-width: 500px) {
+  .header {
+    height: 70vh;
+  }
+
+  .header-contents {
+    gap: 4vw;
+    bottom: 5%;
+  }
+
+  .header-contents h2 {
+    font-size: clamp(1.2rem, 10vw, 2.2rem);
+  }
 }
