@@ -5,17 +5,21 @@ import PlaceOrder from "./pages/PlaceOrder/PlaceOrder.jsx";
 import Header from "./components/Header/Header.jsx";
 import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer.jsx";
 const App = () => {
   return (
-    <div className="app">
-      <Navbar />
+    <>
+      <div className="app">
+        <Navbar />
 
-      <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/cart" element={<Cart />}></Route>
-        <Route path="/order" element={<placeOrder />}></Route>
-      </Routes>
-    </div>
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/cart" element={<Cart />}></Route>
+          <Route path="/order" element={<placeOrder />}></Route>
+        </Routes>
+      </div>
+      <Footer />
+    </>
   );
 };
 
