@@ -1,137 +1,3 @@
-// import { assets } from "../../assets/assets";
-// import "./Navbar.css";
-// import { useState, useRef, useEffect } from "react";
-// import { Menu, X } from "lucide-react";
-// import { Link } from "lucide-react";
-// import React from "react";
-
-// function Navbar() {
-//   const [line, setLine] = useState("home");
-//   const [isMenuOpen, setIsMenuOpen] = useState(false);
-//   const menuRef = useRef(null);
-
-//   const toggleMenu = () => {
-//     const menu = menuRef.current;
-//     if (!menu) return;
-
-//     if (isMenuOpen) {
-//       // Close menu
-//       menu.style.maxHeight = "0px";
-//       setIsMenuOpen(false);
-//     } else {
-//       // Open menu
-//       menu.style.maxHeight = "300px";
-//       setIsMenuOpen(true);
-//     }
-//   };
-
-//   const handleMenuItemClick = (itemName) => {
-//     setLine(itemName);
-//     // Close menu on mobile when item is clicked
-//     if (window.innerWidth <= 768) {
-//       const menu = menuRef.current;
-//       if (menu) {
-//         menu.style.maxHeight = "0px";
-//         setIsMenuOpen(false);
-//       }
-//     }
-//   };
-
-//   // Close menu when clicking outside
-//   useEffect(() => {
-//     const handleClickOutside = (event) => {
-//       if (
-//         menuRef.current &&
-//         !menuRef.current.contains(event.target) &&
-//         !event.target.closest(".menu-icon")
-//       ) {
-//         if (isMenuOpen) {
-//           menuRef.current.style.maxHeight = "0px";
-//           setIsMenuOpen(false);
-//         }
-//       }
-//     };
-
-//     document.addEventListener("mousedown", handleClickOutside);
-//     return () => {
-//       document.removeEventListener("mousedown", handleClickOutside);
-//     };
-//   }, [isMenuOpen]);
-
-//   // Close menu on window resize
-//   useEffect(() => {
-//     const handleResize = () => {
-//       if (window.innerWidth > 768 && isMenuOpen) {
-//         const menu = menuRef.current;
-//         if (menu) {
-//           menu.style.maxHeight = "";
-//           setIsMenuOpen(false);
-//         }
-//       }
-//     };
-
-//     window.addEventListener("resize", handleResize);
-//     return () => {
-//       window.removeEventListener("resize", handleResize);
-//     };
-//   }, [isMenuOpen]);
-
-//   return (
-//     <div className="navbar">
-//       <img src={assets.logo} alt="logo" className="logo" />
-
-//       <ul className="navbar-menu" ref={menuRef}>
-//         <Link
-//           to="/"
-//           onClick={() => handleMenuItemClick("home")}
-//           className={`menu-item ${line === "home" ? "active" : ""}`}
-//         >
-//           Home
-//         </Link>
-//         <a
-//           href="#explore-menu"
-//           onClick={() => handleMenuItemClick("menu")}
-//           className={`menuaitem ${line === "menu" ? "active" : ""}`}
-//         >
-//           Menu
-//         </a>
-//         <a
-//           href="#app-download"
-//           onClick={() => handleMenuItemClick("mobile-app")}
-//           className={`menu-item ${line === "mobile-app" ? "active" : ""}`}
-//         >
-//           Mobile-App
-//         </a>
-//         <a
-//           href="footer"
-//           onClick={() => handleMenuItemClick("contact-us")}
-//           className={`menu-item ${line === "contact-us" ? "active" : ""}`}
-//         >
-//           Contact-us
-//         </a>
-//         <li>
-//           <button>Sign In</button>
-//         </li>
-//       </ul>
-
-//       <div className="navbar-right">
-//         <img src={assets.search_icon} alt="search" />
-//         <div className="navbar-search-icon">
-//           <img src={assets.basket_icon} alt="basket" />
-//           <div className="dot"></div>
-//         </div>
-//         {isMenuOpen ? (
-//           <X className="menu-icon" onClick={toggleMenu} />
-//         ) : (
-//           <Menu className="menu-icon" onClick={toggleMenu} />
-//         )}
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default Navbar;
-
 import { assets } from "../../assets/assets";
 import "./Navbar.css";
 import React, { useState, useRef, useEffect } from "react";
@@ -139,7 +5,7 @@ import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import AppDownload from "../AppDownload/AppDownload";
 
-function Navbar() {
+function Navbar({ setShowLogin }) {
   const [line, setLine] = useState("home");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef(null);
@@ -247,7 +113,7 @@ function Navbar() {
           </a>
         </li>
         <li>
-          <button>Sign In</button>
+          <button onClick={() => setShowLogin(true)}>Sign Up</button>
         </li>
       </ul>
 

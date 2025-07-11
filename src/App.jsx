@@ -6,11 +6,15 @@ import Header from "./components/Header/Header.jsx";
 import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer.jsx";
+import { useState } from "react";
+import LoginPopup from "./components/LoginPopup/LoginPopup.jsx";
 const App = () => {
+  const [showLogin, setShowLogin] = useState(false);
   return (
     <>
+      {showLogin ? <LoginPopup setShowLogin={setShowLogin} /> : <></>}
       <div className="app">
-        <Navbar />
+        <Navbar setShowLogin={setShowLogin} />
 
         <Routes>
           <Route path="/" element={<Home />}></Route>
