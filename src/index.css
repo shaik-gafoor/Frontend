@@ -5,6 +5,7 @@
   margin: 0;
   box-sizing: boarder-box;
   font-family: Outfit;
+  scroll-behavior: smooth;
 }
 .app {
   width: 100%;

@@ -6,7 +6,7 @@ const Header = () => {
     <div>
       <div className="header">
         <div className="header-contents">
-          <h2>FOODSPORT</h2>
+          <h2>FOODSPOT</h2>
           <p>
             Bringing your cravings to your doorstep — fast, fresh, and
             flavorful. Discover a world of delicious meals at your fingertips.
