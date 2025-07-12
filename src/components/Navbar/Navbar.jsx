@@ -4,6 +4,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import AppDownload from "../AppDownload/AppDownload";
+import Cart from "../../pages/Cart/Cart";
 
 function Navbar({ setShowLogin }) {
   const [line, setLine] = useState("home");
@@ -118,9 +119,13 @@ function Navbar({ setShowLogin }) {
       </ul>
 
       <div className="navbar-right">
-        <img src={assets.search_icon} alt="search" />
+        <Link to="/">
+          <img src={assets.search_icon} alt="search" />
+        </Link>
         <div className="navbar-search-icon">
-          <img src={assets.basket_icon} alt="basket" />
+          <Link to="/cart">
+            <img src={assets.basket_icon} alt="basket" />
+          </Link>
           <div className="dot"></div>
         </div>
         {isMenuOpen ? (
